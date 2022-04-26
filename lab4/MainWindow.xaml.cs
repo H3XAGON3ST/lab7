@@ -24,14 +24,15 @@ namespace lab4
     /// </summary>
     public partial class MainWindow : Window
     {
-        IWebDriver driver = new ChromeDriver();
+        IWebDriver driver = new ChromeDriver(); // инициализирую драйвер
         
         public MainWindow()
         {
             InitializeComponent();
         }
         
-        private void Button_Click(object sender, RoutedEventArgs e)
+        // Вход в вк через selenium
+        private void Button_Click(object sender, RoutedEventArgs e) 
         {
             driver.Navigate().GoToUrl("https://vk.com/");
             driver.FindElement(By.XPath("//*[@id=\"index_email\"]")).SendKeys(Login.Text);
@@ -40,6 +41,7 @@ namespace lab4
 
         }
 
+        // закрытие окна и завершение работы драйвера
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             
@@ -48,6 +50,7 @@ namespace lab4
 
         }
 
+        // сохранение страницы в html
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             var client = new WebClient();
@@ -64,6 +67,7 @@ namespace lab4
             
         }
 
+        // переход на введенную страницу
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             webbros.Navigate(source.Text);
