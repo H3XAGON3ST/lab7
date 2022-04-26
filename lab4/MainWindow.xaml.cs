@@ -17,6 +17,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.IO;
 
+// код для lab4
 namespace lab4
 {
     /// <summary>
